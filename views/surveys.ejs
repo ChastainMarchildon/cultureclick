@@ -1,0 +1,39 @@
+<% include partials/header %>
+  <h1>
+    <%= title %>
+  </h1>
+  <section class="content-section">
+    <style scoped>
+      section {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        padding: 1rem;
+      }
+
+      .card {
+        margin: 1rem;
+      }
+    </style>
+    <% for (let i = 0; i < surveys.length; i++) { %>
+
+      <div class="card" style="width: 20rem;">
+        <img src="<%= surveys[i].imageUrl %>" alt="Card example image" style="height:200px;">
+
+        <div class="card-body">
+          <h4 class="card-title">
+            <%= surveys[i].title %>
+          </h4>
+          <h5 class="card-subtitle">
+            <%= surveys[i].city %>
+          </h5>
+          <p class="card-text">
+            <%= surveys[i].description %>
+          </p>
+        <a href="/viewSurvey/<%= surveys[i]._id %>">View Full surveys</a>
+        </div>
+      </div>
+      </div>
+      <% } %>
+  </section>
+  <% include partials/footer %>

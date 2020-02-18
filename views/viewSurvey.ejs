@@ -1,0 +1,19 @@
+<% include partials/header.ejs %>
+
+<div class="hero hero-sm bg-dark" style="padding:30px;">
+  <h1><%= survey.title %></h1>
+</div>
+<div class="container">
+  <div class="columns">
+    <div class="column col-12">
+        <h3><%= survey.city %></h3>
+        <p><%= survey.description %></p>
+        <% for (let i = 0; i < questions.length; i++) { %>
+          <p><%= question %></p>
+        <% } %>
+    </div>
+    <a href="/contact/<%= survey.userID %>">Contact Poster</a>
+    <a href="/generateLink/<%= survey.surveyID %>">NO</a>
+  </div>
+</div>
+<% include partials/footer.ejs %>
