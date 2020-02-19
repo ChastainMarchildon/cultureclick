@@ -146,26 +146,28 @@ exports.viewSurvey = (req,res) =>{
 };
 
 exports.answerSurvey = (req,res) =>{
-  Survey.findById({ _id: req.params.id},(err, survey) =>{
+  Survey.find({ surveyID: req.params.id},(err, survey) =>{
     if (err) {
       console.log(err);
     } else {
+      console.log(survey);
       var lookupID = req.params.id
-      lookupID.toString();
-    Question.find({surveyID: lookupID},(err,questions) =>{
-      if(err){
-        console.log(err);
-      } else {
-        res.render('viewSurvey', {
-          title: 'Answer Survey',
-          survey,
-          questions,
-          isActive: 'admin',
-          user: req.user,
-          })
-        }
-      });
-    }
+      //lookupID.toString();
+      Question.find({surveyID: lookupID},(err,questions) =>{
+        console.log(questions);
+        if(err){
+          console.log(err);
+        } else {
+          res.render('answerSurvey', {
+            title: 'Answer Survey',
+            survey,
+            questions,
+            isActive: 'admin',
+            user: req.user,
+            })
+          }
+        });
+      }
   });
 };
 
