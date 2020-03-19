@@ -15,7 +15,6 @@
         <th>Title</th>
         <th>City</th>
         <th>Description</th>
-        <th>ImageUrl</th>
         <th>Edit</th>
         <th>Delete</th>
       </tr>
@@ -33,9 +32,6 @@
           </td>
           <td>
             <%= surveys[i].description %>
-          </td>
-          <td>
-            <%= surveys[i].question %>
           </td>
           <td>
             <a href="/admin/edit/<%= surveys[i]._id %>" class="btn btn-default">Edit</a>

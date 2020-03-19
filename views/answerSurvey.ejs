@@ -10,6 +10,10 @@
         <p><%= survey.description %></p>
         <% for (let i = 0; i < questions.length; i++) { %>
           <p><%= questions[i] %></p>
+          <div class="form-group">
+            <label for="answer">Answer</label>
+            <textarea type="text-area" id="<%= questions[i] %> answer" name="answer" class="form-input"></textarea>
+        </div>
         <% } %>
     </div>
     <a href="/contact/<%= survey.userID %>">Contact Poster</a>

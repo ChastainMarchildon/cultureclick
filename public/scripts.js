@@ -7,7 +7,7 @@
       var input = document.createElement("input");
       input.id = 'input-' + counter;
       input.type = 'text-area';
-      input.name = 'name';
+      input.name = 'question';
       input.className = 'form-input';
       input.placeholder = 'Question ' + counter;
       form.appendChild(input);

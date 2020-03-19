@@ -10,7 +10,9 @@ exports.registerForm = (req, res) => {
 };
 
 exports.register = (req, res, next) => {
-  const user = new User({ username: req.body.username });
+  const user = new User({ username: req.body.username, 
+                          organization: req.body.organization
+  });
 
   User.register(user, req.body.password, (err, account) => {
     if (err) {

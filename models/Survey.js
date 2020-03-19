@@ -21,6 +21,10 @@ const surveySchema = new mongoose.Schema({
     type: String,
     required: 'Must have a unique survey ID'
   },
+  organization:{
+    type: String,
+    required: 'Must have an organization'
+  },
   questions:[
     {type: Schema.Types.ObjectId, ref: 'Question'}
   ]
